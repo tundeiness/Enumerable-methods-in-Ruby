@@ -6,4 +6,5 @@ module Enumerable
       yield(self[i])
       i += 1
     end
+  end
 end
