@@ -36,24 +36,33 @@ module Enumerable
         yield arr[i][0], arr[i][1], i
         i += 1
       end
-        self
+      self
     end
   end
 
-
+#my_select method
   def my_select
-    my_select.my_each
+    res = []
+    self.my_each do |element|
+      res << element if yield(element)
+    end
+    res
   end
+
+
 
   def my_all?; end
 
   def my_any?; end
 end
 
+include Enumerable
 arr = [4, 9, 2, 9, 56, 4, 0]
 
 #{"h"=> 2, "v"=> 1, "l"=> 4, "m"=> 2, }.my_each{|k, v| puts v*2}
 
-#puts arr.my_each { |ele| puts ele }
+# arr.my_each { |ele| puts ele }
 
-puts arr.my_each_with_index { |ele, i| puts i }
+# arr.my_each_with_index { |ele, i| puts ele }
+
+arr.my_select{ |ele| puts ele  > 4}
