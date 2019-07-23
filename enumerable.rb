@@ -47,7 +47,6 @@ module Enumerable
     my_each do |elem|
       res << elem if yield(elem)
     end
-    res
   end
 
   # my_none? method
