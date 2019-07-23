@@ -51,12 +51,12 @@ module Enumerable
 
   # my_none? method
   def my_none?
-    truthy = false
-    my_select do |item|
-      truthy = true unless yield item
-      break
+    for elem in self
+      if yield(elem)
+        return false
+      end
     end
-    truthy
+      return true
   end
 
   # my_count method
@@ -81,7 +81,7 @@ arr = [4, 9, 2, 9, 56, 4, 0]
 
 # {"h"=> 2, "v"=> 1, "l"=> 4, "m"=> 2, }.my_each{|k, v| puts v*2}
 
- arr.my_each { |ele| puts ele }
+# arr.my_each { |ele| puts ele }
 
 # arr.my_each_with_index { |ele, i| puts ele }
 
@@ -91,7 +91,7 @@ arr = [4, 9, 2, 9, 56, 4, 0]
 
 # arr.my_all? { |a| a >= 3 }
 
-# puts arr.my_none?{|a| a.nil? }
+ puts arr.my_none?{|a| a.nil? }
 
 # puts arr.my_count(4){|ele| puts ele == 2}
 
