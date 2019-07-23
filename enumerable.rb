@@ -26,7 +26,7 @@ module Enumerable
     if self.instance_of?(Array)
       i = 0
       until i == self.length
-        yield(self[i], i)
+        yield(self[i])
         i += 1
       end
 
@@ -34,7 +34,7 @@ module Enumerable
       i = 0
       arr = to_a
       until i == arr.length
-        yield arr[i][0], arr[i][1], i
+        yield (arr[i][0], arr[i][1])
         i += 1
       end
       self
