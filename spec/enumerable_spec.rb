@@ -1,4 +1,4 @@
-require_relative '../enumerable.rb'
+require_relative '../lib/enumerable.rb'
 
 
 
@@ -6,8 +6,19 @@ describe Enumerable do
 
   describe '#my_each' do
     let(:arr){[1,2,3,4,5]}
+    let(:response){[]}
     it 'iterates and display each element of an array' do
-      expect()
+      arr.my_each{|x| response << x}
+      expect(response).to eql([1,2,3,4,5])
+    end
+  end
+
+  describe '#my_each_with_index' do
+    let(:arr){[1,2,3,4,5]}
+    let(:response){[]}
+    it 'iterates over an array if a block is given' do
+       arr.my_each_with_index{|item, idx| response << idx}
+       expect(response).to eql([0,1,2,3,4])
     end
   end
 
