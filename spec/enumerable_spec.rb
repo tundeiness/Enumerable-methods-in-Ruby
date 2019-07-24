@@ -32,11 +32,18 @@ describe Enumerable do
       expect(res).to eql(4)
     end
 
+    it 'returns the number of elements in an array when no block is provided' do
+      expect(arr.my_count).to eql(5)
+    end
 
   end
 
   describe '#my_select' do
-      it ''
+      let(:arr){[1,2,3,4,5]}
+      it 'iterates an array to produce elements for which the given block is truthy' do
+        response = arr.my_select{|elem| elem % 2 != 0}
+        expect(response).to eq([1,3,5])
+      end
   end
 
 

@@ -33,6 +33,17 @@ module Enumerable
      cnt
   end
 
+  #my_select method
+  def my_select
+    res = [] if self.instance_of? Array
+    res = {} if self.instance_of? Hash
+
+    self.my_each {|item|
+        res.push(item) if yield(item) != false
+    }
+    res
+  end
+
 end
 
 
@@ -46,7 +57,7 @@ arr = [4, 9, 2, 9, 56, 4, 0]
 
  #arr.my_each_with_index { |ele, i| puts i }
 
-# puts arr.my_select{ |ele| puts ele  > 4}
+ puts arr.my_select{ |ele| puts ele  > 4}
 
 # arr.my_all?{ |ele| puts ele  > 4}
 
@@ -56,7 +67,7 @@ arr = [4, 9, 2, 9, 56, 4, 0]
  #puts arr.none?{|a| a.nil? }
  #puts arr.none?
 
-puts arr.my_count
+#puts arr.my_count
 
 #puts arr.my_any? { |ele| puts ele == 2 }
 #puts arr.any? { |ele| puts ele == 2 }
