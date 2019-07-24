@@ -55,6 +55,16 @@ module Enumerable
   end
 
 
+  #my_any? method
+  def my_any?
+    any = false
+    self.my_each{|x|
+        any = true if yield(x)
+    }
+     any
+  end
+
+
 
 end
 
