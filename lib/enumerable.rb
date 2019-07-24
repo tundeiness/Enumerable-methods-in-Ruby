@@ -23,11 +23,14 @@ module Enumerable
   def my_count
     cnt = 0
     self.my_each{|ele|
-      if yield(ele)
+
+      if block_given?
+        cnt+=1 if yield(ele) != false
+      else
         cnt+=1
       end
     }
-    return cnt
+     cnt
   end
 
 end
@@ -39,7 +42,7 @@ arr = [4, 9, 2, 9, 56, 4, 0]
 
 # {"h"=> 2, "v"=> 1, "l"=> 4, "m"=> 2, }.my_each{|k, v| puts v*2}
 
- arr.my_each{ |ele| puts ele }
+# arr.my_each{ |ele| puts ele }
 
  #arr.my_each_with_index { |ele, i| puts i }
 
@@ -53,7 +56,7 @@ arr = [4, 9, 2, 9, 56, 4, 0]
  #puts arr.none?{|a| a.nil? }
  #puts arr.none?
 
-#puts arr.my_count{|ele| puts ele}
+puts arr.my_count
 
 #puts arr.my_any? { |ele| puts ele == 2 }
 #puts arr.any? { |ele| puts ele == 2 }

@@ -35,5 +35,9 @@ describe Enumerable do
 
   end
 
+  describe '#my_select' do
+      it ''
+  end
+
 
 end
