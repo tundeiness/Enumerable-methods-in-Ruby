@@ -7,6 +7,7 @@ describe Enumerable do
   describe '#my_each' do
     let(:arr){[1,2,3,4,5]}
     let(:response){[]}
+
     it 'iterates and display each element of an array' do
       arr.my_each{|x| response << x}
       expect(response).to eql([1,2,3,4,5])
@@ -20,6 +21,18 @@ describe Enumerable do
        arr.my_each_with_index{|item, idx| response << idx}
        expect(response).to eql([0,1,2,3,4])
     end
+  end
+
+  describe '#my_count' do
+    let(:arr){[1,2,3,4,5]}
+    it 'returns the number of elements when a block is provided' do
+      response = arr.my_count{|ele| ele > 4}
+      res = arr.my_count{|ele| ele > 1}
+      expect(response).to eql(1)
+      expect(res).to eql(4)
+    end
+
+
   end
 
 

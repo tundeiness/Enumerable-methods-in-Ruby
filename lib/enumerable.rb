@@ -19,6 +19,17 @@ module Enumerable
     end
   end
 
+  #my_count method
+  def my_count
+    cnt = 0
+    self.my_each{|ele|
+      if yield(ele)
+        cnt+=1
+      end
+    }
+    return cnt
+  end
+
 end
 
 
