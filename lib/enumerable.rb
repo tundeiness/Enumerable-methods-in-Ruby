@@ -44,6 +44,18 @@ module Enumerable
     res
   end
 
+
+  #my_all? method
+  def my_all?
+    all = true
+    self.my_each{|x|
+        all = false if !yield(x)
+    }
+     all
+  end
+
+
+
 end
 
 
@@ -57,9 +69,9 @@ arr = [4, 9, 2, 9, 56, 4, 0]
 
  #arr.my_each_with_index { |ele, i| puts i }
 
- puts arr.my_select{ |ele| puts ele  > 4}
+ #puts arr.my_select{ |ele| puts ele  > 4}
 
-# arr.my_all?{ |ele| puts ele  > 4}
+ arr.my_all?{ |ele| puts ele  > 4}
 
 # arr.my_all? { |a| a >= 3 }
 

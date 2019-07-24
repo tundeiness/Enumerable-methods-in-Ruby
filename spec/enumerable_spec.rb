@@ -3,6 +3,7 @@ require_relative '../lib/enumerable.rb'
 
 
 describe Enumerable do
+  let(:arr){[1,2,3,4,5]}
 
   describe '#my_each' do
     let(:arr){[1,2,3,4,5]}
@@ -45,6 +46,19 @@ describe Enumerable do
         expect(response).to eq([1,3,5])
       end
   end
+
+
+  describe '#my_all?' do
+    it 'returns false when one of the elements does not meet the block condition' do
+     ans = arr.my_all?{|elem| elem != 2}
+     expect(ans).to be(false)
+    end
+
+    it 'returns true if all elements meet the block condition ' do
+      ans = arr.my_all?{|elem| elem < 6}
+      expect(ans).to be(true)
+     end
+end
 
 
 end
