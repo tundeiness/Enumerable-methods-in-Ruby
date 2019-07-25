@@ -75,4 +75,12 @@ describe Enumerable do
   end
 
 
+  describe '#my_none?' do
+    it 'returns true if block conditions are not met' do
+      ans = arr.my_none?{|elem| elem == 5}
+      expect(ans).to be(true)
+     end
+  end
+
+
 end

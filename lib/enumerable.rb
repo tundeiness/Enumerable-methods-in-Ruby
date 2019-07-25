@@ -64,6 +64,15 @@ module Enumerable
      any
   end
 
+  #my_none? method
+  def my_none?
+    none = false
+    self.my_select{|x|
+      none = true if !yield(x)
+    }
+    none
+  end
+
 
 
 end
@@ -81,13 +90,15 @@ arr = [4, 9, 2, 9, 56, 4, 0]
 
  #puts arr.my_select{ |ele| puts ele  > 4}
 
- arr.my_all?{ |ele| puts ele  > 4}
+# arr.my_all?{ |ele| puts ele  > 4}
 
 # arr.my_all? { |a| a >= 3 }
 
  #puts arr.my_none?{|a| a.nil? }
  #puts arr.none?{|a| a.nil? }
  #puts arr.none?
+ #puts %w{ant bear cat}.none? { |word| word.length == 5 }
+ puts %w{ant bear cat}.none? { |word| word.length >= 4 } #=> false
 
 #puts arr.my_count
 
