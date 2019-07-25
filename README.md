@@ -8,6 +8,12 @@ used here to test the methods that were implemented. The reason for using this
 approach is for me to have a better understand of RSpec, the terminologies and
 how to write test efficiently.
 
+
+# Technologies used.
+Ruby
+
+
+
 #Installation
 
 > $ git clone https://github.com/tundeiness/Enumerable-methods-in-Ruby.git
@@ -16,3 +22,6 @@ how to write test efficiently.
 > $ load "lib/enumerable.rb"
 
 
+#Author
+This projects was executed by **Tunde**.
+You can meet me here on  [Github](https://github.com/tundeiness/) and,  here on [LinkedIn](https://www.linkedin.com/in/tunde-oretade/)
