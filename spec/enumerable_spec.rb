@@ -77,8 +77,7 @@ describe Enumerable do
 
   describe '#my_none?' do
     it 'returns true if block conditions are not met' do
-      ans = arr.my_none?{|elem| elem == 5}
-      expect(ans).to be(true)
+      expect(%w{ant bear cat}.my_none? { |word| word.length == 5 }).to be(true)
      end
   end
 
