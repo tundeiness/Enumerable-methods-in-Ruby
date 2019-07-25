@@ -14,14 +14,17 @@ Ruby
 
 
 
-#Installation
+# Installation
 
 > $ git clone https://github.com/tundeiness/Enumerable-methods-in-Ruby.git
+>
 > $ cd Enumerable-methods-in-Ruby
+>
 > $ irb
+>
 > $ load "lib/enumerable.rb"
 
 
-#Author
+# Author
 This projects was executed by **Tunde**.
 You can meet me here on  [Github](https://github.com/tundeiness/) and,  here on [LinkedIn](https://www.linkedin.com/in/tunde-oretade/)
