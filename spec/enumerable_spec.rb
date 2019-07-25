@@ -95,6 +95,13 @@ describe Enumerable do
   end
 
 
+  describe '#my_inject' do
+    it 'iterate through a collection one element at a time to build a new object' do
+      ans = arr.my_inject{|sum, number| sum + number}
+      expect(ans).to eql(15)
+    end
+  end
+
 
 
 

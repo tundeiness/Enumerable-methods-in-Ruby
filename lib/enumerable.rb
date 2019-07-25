@@ -88,13 +88,29 @@ module Enumerable
     result
   end
 
+  #my_inject method
+  def my_inject(*arg)
+    init = arg.length > 0
+    store = init ? arg[0] : self[0]
+    self.drop(init ? 0 : 1).my_each{|num|
+      store = yield(store,num)
+    }
+    store
+  end
 
 
 end
 
-
+def multiply_els(args)
+include Enumerable
+args.my_inject{|acc,num|
+    acc * num
+}
+end
 
 arr = [4, 9, 2, 9, 56, 4, 0]
+
+puts multiply_els([2,4,5])
 #arr = ['girl','boy','girl','girl']
 
 # {"h"=> 2, "v"=> 1, "l"=> 4, "m"=> 2, }.my_each{|k, v| puts v*2}
@@ -120,4 +136,4 @@ arr = [4, 9, 2, 9, 56, 4, 0]
 #puts arr.my_any? { |ele| puts ele == 2 }
 #puts arr.any? { |ele| puts ele == 2 }
 
-puts arr.my_map{ |ele| puts ele ** 4}
+#puts arr.my_inject{ |sum,num| sum+num}
