@@ -113,7 +113,6 @@ arr = [4, 9, 2, 9, 56, 4, 0]
 puts multiply_els([2,4,5])
 #arr = ['girl','boy','girl','girl']
 
-# {"h"=> 2, "v"=> 1, "l"=> 4, "m"=> 2, }.my_each{|k, v| puts v*2}
 
 # arr.my_each{ |ele| puts ele }
 
