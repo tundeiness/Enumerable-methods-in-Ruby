@@ -76,7 +76,7 @@ describe Enumerable do
 
 
   describe '#my_none?' do
-    it 'returns true if block conditions are not met' do
+    it 'returns true if block conditions are not met by the elements' do
       expect(%w{ant bear cat}.my_none? { |word| word.length == 5 }).to be(true)
     end
 
@@ -84,6 +84,18 @@ describe Enumerable do
       expect(%w{ant bear cat}.none? { |word| word.length >= 4 }).to be(false)
      end
   end
+
+
+
+  describe '#my_map' do
+    it 'returns a new array modified by the block' do
+      ans = arr.my_map{|elem| elem ** 2}
+      expect(ans).to eql([1,4,9,16,25])
+    end
+  end
+
+
+
 
 
 end

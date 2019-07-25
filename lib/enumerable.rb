@@ -73,6 +73,21 @@ module Enumerable
     none
   end
 
+  #my_map method
+  def my_map(proc = nil)
+    result = []
+    if proc
+      self.my_each{|elem|
+        result.push(proc.call(elem))
+      }
+    else
+      self.my_each{|elem|
+        result.push(yield(elem))
+      }
+    end
+    result
+  end
+
 
 
 end
@@ -98,9 +113,11 @@ arr = [4, 9, 2, 9, 56, 4, 0]
  #puts arr.none?{|a| a.nil? }
  #puts arr.none?
  #puts %w{ant bear cat}.none? { |word| word.length == 5 }
- puts %w{ant bear cat}.none? { |word| word.length >= 4 } #=> false
+ #puts %w{ant bear cat}.none? { |word| word.length >= 4 } #=> false
 
 #puts arr.my_count
 
 #puts arr.my_any? { |ele| puts ele == 2 }
 #puts arr.any? { |ele| puts ele == 2 }
+
+puts arr.my_map{ |ele| puts ele ** 4}
