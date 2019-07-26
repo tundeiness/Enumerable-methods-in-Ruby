@@ -14,30 +14,20 @@ Methods implemented are the:
 * #inject(#my_inject).
 
 The #my_inject method was also tested in another method called #multiply_els.
-Although not required in the project, the Test Driven Development approach was
-used here to test the methods that were implemented. The reason for using this
-approach is for me to have a better understand of RSpec, the terminologies and
-how to write test efficiently.
-
-
-# Technology used
-
-  Ruby
-
-
-
-# Installation
-
-> $ git clone https://github.com/tundeiness/Enumerable-methods-in-Ruby.git
->
-> $ cd Enumerable-methods-in-Ruby
->
-> $ irb
->
-> $ load "lib/enumerable.rb"
 
 
 # Author
 
   This project was executed by **Tunde**.
   You can meet me here on [LinkedIn](https://www.linkedin.com/in/tunde-oretade/)
+
+
+## Technology used
+
+  Ruby
+
+
+
+## Installation
+
+> $ git clone https://github.com/tundeiness/Enumerable-methods-in-Ruby.git
