@@ -1,9 +1,17 @@
 # Enumerable-methods-in-Ruby
 
 This project is all about implementing some of Ruby's Enumerable Module methods.
-Methods implemented are the #each(#my_each), #each_with_index(#each_with_index)
-,#select(#my_select), #all?(#my_all?), #any?(#my_any?),#none?(#my_none?)
-,#count(#my_count), #map(#my_map), and #inject(#my_inject).
+Methods implemented are the:
+
+* #each(#my_each),
+* #each_with_index(#each_with_index),
+* #select(#my_select),
+* #all?(#my_all?),
+* #any?(#my_any?),
+* #none?(#my_none?),
+* #count(#my_count),
+* #map(#my_map), and
+* #inject(#my_inject).
 
 The #my_inject method was also tested in another method called #multiply_els.
 Although not required in the project, the Test Driven Development approach was
